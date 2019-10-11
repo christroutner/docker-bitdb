@@ -1,8 +1,8 @@
-# docker-slpdb
+# docker-bitdb
 This Docker container sets up
-[SLPDB](https://github.com/christroutner/SLPDB) and
-[slpserve](https://github.com/fountainhead-cash/slpserve)
-to create API endpoints for querying [SLP token](https://simpleledger.cash/) information.
+[BitDB](https://github.com/christroutner/bitdb) and
+[bitserve](https://github.com/christroutner/bitserve)
+to create API endpoints for querying the last year of BCH blockchain data.
 
 ## Installation
 It's assumed that you are starting with a fresh installation of Ubuntu 18.04

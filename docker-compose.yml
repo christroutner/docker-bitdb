@@ -1,9 +1,8 @@
 mongodb:
-  #image: mongo:4.2-bionic
-  image: mongo:4.0
-  container_name: mongo-slpdb
+  image: mongo:4.2-bionic
+  container_name: mongo-bitdb
   ports:
-    - "12301:27017"
+    - "12311:27017"
   volumes:
     - ../data/mongodb:/data/db
   command: mongod --logpath=/dev/null # -- quiet
@@ -13,21 +12,20 @@ slpdb:
   build: .
   dockerfile: Dockerfile
   #image: christroutner/slpdb-mainnet_slpdb:0.15.3
-  container_name: slpdb
+  container_name: bitdb
   links:
     - mongodb
   volumes:
-    - ../data/leveldb:/home/safeuser/SLPDB/_leveldb
     - ../config:/home/safeuser/config
   restart: always
 
-slpserve:
-  build: ./slpserve/
-  dockerfile: Dockerfile
+#slpserve:
+#  build: ./slpserve/
+#  dockerfile: Dockerfile
   #image: christroutner/slpdb-mainnet_slpserve
-  container_name: slpserve
-  links:
-    - mongodb
-  ports:
-    - "12300:4000"
-  restart: always
+#  container_name: slpserve
+#  links:
+#    - mongodb
+#  ports:
+#    - "12300:4000"
+#  restart: always

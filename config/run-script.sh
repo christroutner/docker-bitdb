@@ -19,10 +19,4 @@ export rpc_pass=password
 export zmq_incoming_host=172.17.0.1
 export zmq_incoming_port=28332
 
-# Turn off graph search
-export enable_graph_search=0
-
-# Turn off ZMQ output port
-export zmq_outgoing_enable=0
-
-npm start
+npm start --max_old_space_size=4096
