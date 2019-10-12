@@ -17,6 +17,7 @@ slpdb:
     - mongodb
   volumes:
     - ../config:/home/safeuser/config
+    - ../data/leveldb:/home/safeuser/bitdb/leveldb
   restart: always
 
 #slpserve:

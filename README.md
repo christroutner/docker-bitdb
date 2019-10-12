@@ -19,26 +19,24 @@ to Digital Ocean's cloud servers, but should work for any Ubuntnu system.
 [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 shows how to do so on a Ubuntu system.
 
-- Ensure you have a fully-synced BCH full node for SLPDB to query.
+- Ensure you have a fully-synced BCH full node for BitDB to query.
 This [docker-abc](https://github.com/christroutner/docker-abc) dockerized
 full node will do exactly this.
 
 - Clone this repository in your home directory with the following command:
 
-`git clone https://github.com/christroutner/docker-slpdb`
+`git clone https://github.com/christroutner/docker-bitdb`
 
-- Create two additional directories in the same folder as the `docker-slpdb` folder:
-  - `config` - will contain persistent configuration data to customize SLPDB.
+- Create two additional directories in the same folder as the `docker-bitdb` folder:
+  - `config` - will contain persistent configuration data to customize BitDB.
   - `data` - will contain LevelDB and MongoDB database data.
     - Inside this directory, create two more directories: `leveldb` and `mongodb`
 
-- Customize the [run-script.sh](./run-script.sh) bash script file with the
+- Customize the [run-script.sh](./config/run-script.sh) bash script file with the
 environment variables for your full node. Copy this file to the `config` directory you created earlier.
 
-- (optional) By default,
-the [docker-compose.yml](docker-compose.yml) file is configured to pull the image
-from Docker Hub. But the container can also be built from scratch with this
-command:
+- (optional) customize the [docker-compose.yml](docker-compose.yml) file. build
+the container with this command:
 
 `docker-compose build --no-cache`
 

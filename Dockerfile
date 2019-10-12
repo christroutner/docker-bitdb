@@ -25,21 +25,21 @@ USER safeuser
 
 # Clone the BitDB repository
 RUN git clone https://github.com/christroutner/bitdb
-WORKDIR /home/safeuser/SLPDB
-
-# Copy the env file
-COPY .env .env
+WORKDIR /home/safeuser/bitdb
 
 # Install dependencies.
 RUN npm install
 
+# Copy the env file
+COPY config/.env .env
+
 # Call out the persistant volumes
-VOLUME /home/safeuser/data
+VOLUME /home/safeuser/bitdb/leveldb
 VOLUME /home/safeuser/config
 
 COPY startup-script.sh startup-script.sh
-#CMD ["./startup-script.sh"]
+CMD ["./startup-script.sh"]
 
 # Used for debugging.
 COPY dummyapp.js dummyapp.js
-CMD ["node", "dummyapp.js"]
+#CMD ["node", "dummyapp.js"]

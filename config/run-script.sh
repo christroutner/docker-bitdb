@@ -7,7 +7,7 @@
 # Set the MongoDB IP address and port. By default uses the MongoDB Docker
 # container bundled in the docker-compose.yml file.
 #export db_url=mongodb://localhost:27017
-export db_url=mongodb://172.17.0.1:12301
+export db_url=mongodb://172.17.0.1:12311
 
 
 # Set the full node IP address and port
